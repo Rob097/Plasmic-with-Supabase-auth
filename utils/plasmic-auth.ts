@@ -33,6 +33,9 @@ export async function getPlasmicAuthData(
     }
 
     const { user: plasmicUser, token: plasmicUserToken } = result;
+    plasmicUser.properties = plasmicUser.properties || {};
+    plasmicUser.properties.token = plasmicUserToken;
+    console.log('plasmicUser', plasmicUser);
 
     return {
       plasmicUser,
