@@ -55,11 +55,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     supabaseServerClient
   );
 
-  if(plasmicUser) {
-    plasmicUser.properties = plasmicUser.properties || {};
-    plasmicUser.properties.token = plasmicUserToken;
-  }
-
   const pageMeta = plasmicData.entryCompMetas[0];
   // Cache the necessary data fetched for the page
   const queryCache = await extractPlasmicQueryData(

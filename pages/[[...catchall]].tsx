@@ -24,10 +24,6 @@ export default function PlasmicLoaderPage(props: {
   if (!plasmicData || plasmicData.entryCompMetas.length === 0) {
     return <Error statusCode={404} />;
   }
-  if(plasmicUser) {
-    plasmicUser.properties = plasmicUser.properties || {};
-    plasmicUser.properties.token = plasmicUserToken;
-  }
   const pageMeta = plasmicData.entryCompMetas[0];
   return (
     <PlasmicRootProvider
