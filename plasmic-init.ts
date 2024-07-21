@@ -1,6 +1,7 @@
 import { initPlasmicLoader } from "@plasmicapp/loader-nextjs";
 import { AuthButton } from "@/components/AuthButton";
 import { AuthForm } from "@/components/AuthForm";
+import { TokenProvider } from "@/components/DataProvider"; // Import the DataProvider
 
 export const PLASMIC = initPlasmicLoader({
   projects: [
@@ -28,3 +29,11 @@ export const PLASMIC = initPlasmicLoader({
 
 PLASMIC.substituteComponent(AuthButton, "AuthButton");
 PLASMIC.substituteComponent(AuthForm, "AuthForm");
+PLASMIC.registerComponent(TokenProvider, {
+  name: "Token Provider",
+  providesData: true,
+  props: {
+    children: 'slot',
+    className: 'string'
+  }
+});

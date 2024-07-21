@@ -12,5 +12,6 @@ export default async function getPlasmicAuthDataHandler(
     res,
   });
 
-  res.json(await getPlasmicAuthData(supabaseServerClient));
+  const authData = await getPlasmicAuthData(supabaseServerClient);
+  res.json(authData);
 }

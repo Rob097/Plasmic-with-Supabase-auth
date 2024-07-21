@@ -1,17 +1,16 @@
-import * as React from "react";
 import {
-  PlasmicComponent,
-  extractPlasmicQueryData,
   ComponentRenderData,
+  PlasmicComponent,
   PlasmicRootProvider,
+  extractPlasmicQueryData,
 } from "@plasmicapp/loader-nextjs";
-import type { GetStaticPaths, GetStaticProps } from "next";
 import "@supabase/auth-helpers-nextjs";
+import type { GetStaticPaths, GetStaticProps } from "next";
 import useSWR from "swr";
 
+import { PLASMIC } from "@/plasmic-init";
 import Error from "next/error";
 import { useRouter } from "next/router";
-import { PLASMIC } from "@/plasmic-init";
 import { PLASMIC_AUTH_DATA_KEY } from "../utils/cache-keys";
 
 export default function PlasmicLoaderPage(props: {
